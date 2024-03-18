@@ -1,6 +1,8 @@
+from django.conf import settings
+
 class UserRepository:
-    def __init__(self, db):
-        self.db = db # Firebase database instance
+    def __init__(self):
+        self.db = settings.db # Firebase database instance
 
     def get_user(self, user_id):
         return self.db.child('users').child(user_id).get().val()

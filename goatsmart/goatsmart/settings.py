@@ -36,7 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles',    
+    'user',
 ]
 
 MIDDLEWARE = [
@@ -137,7 +138,7 @@ import pyrebase
 # };
 
 config = {
-  "apiKey": "AIzaSyA11nBw9bitqtEUv5U-6ztPzuFaCHgrj_4",
+    "apiKey": "AIzaSyA11nBw9bitqtEUv5U-6ztPzuFaCHgrj_4",
     "authDomain": "goatsmart-isis.firebaseapp.com",
     "databaseURL": "https://goatsmart-isis-default-rtdb.firebaseio.com",
     "projectId": "goatsmart-isis",

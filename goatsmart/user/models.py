@@ -33,20 +33,20 @@ class User(models.Model):
         return self.is_admin
     
     
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    profile_picture = models.ImageField(upload_to='profile_pictures/', default='profile_pictures/default.jpg')
-    bio = models.TextField(max_length=500, blank=True)
-    major = models.CharField(max_length=50, blank=True)
-    birth_date = models.DateField(null=True, blank=True)
+# class Profile(models.Model):
+#     user = models.OneToOneField(User, on_delete=models.CASCADE)
+#     profile_picture = models.ImageField(upload_to='profile_pictures/', default='profile_pictures/default.jpg')
+#     bio = models.TextField(max_length=500, blank=True)
+#     major = models.CharField(max_length=50, blank=True)
+#     birth_date = models.DateField(null=True, blank=True)
 
-    def __str__(self):
-        return self.user.username
+#     def __str__(self):
+#         return self.user.username
 
-    class Meta:
-        db_table = 'profile'
-        verbose_name = 'profile'
-        verbose_name_plural = 'profiles'
-        ordering = ['user']
+#     class Meta:
+#         db_table = 'profile'
+#         verbose_name = 'profile'
+#         verbose_name_plural = 'profiles'
+#         ordering = ['user']
 
         
