@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-import pyrebase
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -124,16 +123,16 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-config = {
-    "apiKey": "your-api-key",
-    "authDomain": "your-auth-domain",
-    "databaseURL": "your-database-url",
-    "projectId": "your-project-id",
-    "storageBucket": "your-storage-bucket",
-    "messagingSenderId": "your-messaging-sender-id",
-    "appId": "your-app-id",
-    "measurementId": "your-measurement-id",
-}
+# config = {
+#     "apiKey": "your-api-key",
+#     "authDomain": "your-auth-domain",
+#     "databaseURL": "your-database-url",
+#     "projectId": "your-project-id",
+#     "storageBucket": "your-storage-bucket",
+#     "messagingSenderId": "your-messaging-sender-id",
+#     "appId": "your-app-id",
+#     "measurementId": "your-measurement-id",
+# }
 
-firebase = pyrebase.initialize_app(config)
-db = firebase.database()
+# firebase = pyrebase.initialize_app(config)
+# db = firebase.database()
