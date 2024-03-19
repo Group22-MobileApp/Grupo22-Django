@@ -124,30 +124,30 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-import pyrebase
+# import pyrebase
 
-# # config = {
-#   apiKey: "AIzaSyA11nBw9bitqtEUv5U-6ztPzuFaCHgrj_4",
-#   authDomain: "goatsmart-isis.firebaseapp.com",
-#   databaseURL: "https://goatsmart-isis-default-rtdb.firebaseio.com",
-#   projectId: "goatsmart-isis",
-#   storageBucket: "goatsmart-isis.appspot.com",
-#   messagingSenderId: "775920845294",
-#   appId: "1:775920845294:web:da1b415f2cdc03840f4eff",
-#   measurementId: "G-F3EDNBVSYF"
-# };
+# # # config = {
+# #   apiKey: "AIzaSyA11nBw9bitqtEUv5U-6ztPzuFaCHgrj_4",
+# #   authDomain: "goatsmart-isis.firebaseapp.com",
+# #   databaseURL: "https://goatsmart-isis-default-rtdb.firebaseio.com",
+# #   projectId: "goatsmart-isis",
+# #   storageBucket: "goatsmart-isis.appspot.com",
+# #   messagingSenderId: "775920845294",
+# #   appId: "1:775920845294:web:da1b415f2cdc03840f4eff",
+# #   measurementId: "G-F3EDNBVSYF"
+# # };
 
-config = {
-    "apiKey": "AIzaSyA11nBw9bitqtEUv5U-6ztPzuFaCHgrj_4",
-    "authDomain": "goatsmart-isis.firebaseapp.com",
-    "databaseURL": "https://goatsmart-isis-default-rtdb.firebaseio.com",
-    "projectId": "goatsmart-isis",
-    "storageBucket": "goatsmart-isis.appspot.com",
-    "messagingSenderId": "775920845294",
-    "appId": "1:775920845294:web:da1b415f2cdc03840f4eff",
-    "measurementId": "G-F3EDNBVSYF"
-}
+# config = {
+#     "apiKey": "AIzaSyA11nBw9bitqtEUv5U-6ztPzuFaCHgrj_4",
+#     "authDomain": "goatsmart-isis.firebaseapp.com",
+#     "databaseURL": "https://goatsmart-isis-default-rtdb.firebaseio.com",
+#     "projectId": "goatsmart-isis",
+#     "storageBucket": "goatsmart-isis.appspot.com",
+#     "messagingSenderId": "775920845294",
+#     "appId": "1:775920845294:web:da1b415f2cdc03840f4eff",
+#     "measurementId": "G-F3EDNBVSYF"
+# }
 
-firebase = pyrebase.initialize_app(config)
-authe = firebase.auth()
-db = firebase.database()
+# firebase = pyrebase.initialize_app(config)
+# authe = firebase.auth()
+# db = firebase.database()

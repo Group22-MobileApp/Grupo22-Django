@@ -6,7 +6,7 @@ from django.conf import settings
 
 import json
 
-user_service = UserService(UserRepository)
+user_service = UserService()
 
 def get_user(request, user_id):
     user = user_service.get_user(user_id)    
@@ -14,9 +14,10 @@ def get_user(request, user_id):
 
 @csrf_exempt
 def create_user(request):
-    data = json.loads(request.body)
-    user_id = user_service.create_user(data)
-    return JsonResponse(user_id)
+    data = json.loads(request.body)    
+    print(data)
+    user_id = user_service.create_user(data=data)
+    return JsonResponse(user_id, safe=False)
 
 @csrf_exempt
 def update_user(request, user_id):

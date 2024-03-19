@@ -3,32 +3,18 @@ import datetime
 from django.conf import settings
 
 from user.models import User
+from user.repository import UserRepository
+
 class UserService:
-    def __init__(self, user_repository):
-        self.user_repository = user_repository
+    def __init__(self):
+        self.user_repository = UserRepository()
 
     def get_user(self, user_id):
         return self.user_repository.get_user(user_id)
     
-    def create_user(self, data):
-        user = User(
-            username = data.get('username'),
-            password = data.get('password'),
-            email = data.get('email'),
-            first_name = data.get('first_name'),
-            last_name = data.get('last_name'),
-            phone = data.get('phone'),
-            date_joined = datetime.datetime.now(),
-            last_login = datetime.datetime.now(),
-            university_major = data.get('university_major'),
-            is_active = True,
-            is_staff = False,
-            is_admin = False,
-            is_superuser = False
-        )
-
-        user_created = self.user_repository.create_user(self.user_repository, user)
-        return user_created.id
+    def create_user(self, data):    
+        user_created = self.user_repository.create_user(user=data)
+        return user_created.user_id
     
     def update_user(self, user_id, user):
         return self.user_repository.update_user(user_id, user)
@@ -37,7 +23,12 @@ class UserService:
         return self.user_repository.delete_user(user_id)
     
     def get_all_users(self):
-        return self.user_repository.get_all_users()
+        users_query = self.user_repository.get_all_users()
+        # Extract name and email from the query
+        users_query_red = users_query.values('first_name', 'last_name', 'email')
+        # Transform the query into a list
+        return list(users_query_red)        
+    
     
     def get_user_by_email(self, email):
         return self.user_repository.get_user_by_email(email)
